@@ -25,5 +25,3 @@ A web-based system built using ASP.NET Core MVC for managing courses, instructor
 - AutoMapper
 - Bootstrap 5
 - Google OAuth / Facebook Login
-- OBS Studio (for demo recording)
-- HandBrake (for video conversion)
