@@ -1,20 +1,29 @@
+# 🎓 Course Management System
 
-I’m excited to share my latest project:
-🎓 Course Management System – a full-stack ASP.NET Core MVC application designed for managing online courses, instructors, students, enrollments, and more.
+A web-based system built using ASP.NET Core MVC for managing courses, instructors, students, and enrollments. It supports role-based access (Admin, Instructor, Student), authentication (email + external login via Google/Facebook), and dynamic dashboards.
 
-🔹 Key Features:
+---
+## 🚀 Features
 
-User Roles: Admin, Instructor, and Student
+- 🧑‍🏫 Admin Panel to manage users, courses, and enrollments
+- 👨‍🎓 Student registration and course enrollment
+- 👨‍🏫 Instructor profile with their courses
+- 🔐 Authentication & Authorization using ASP.NET Identity
+- 🌐 External login via Google & Facebook
+- 📊 View registered students per course
+- 🔎 Course search functionality
+- 🎥 Recorded demo (OBS Studio + HandBrake)
 
-Course creation, registration, and enrollment tracking
+---
 
-Secure login and external authentication (Google & Facebook)
+## 🛠️ Tech Stack
 
-Dynamic dashboards and course filtering
-
-EF Core with proper relationships and role-based access
-
-📁 Tech Stack:
-.NET Core MVC, Entity Framework, SQL Server, AutoMapper, Identity, Bootstrap
-
-This project was a great opportunity to improve my architecture skills, implement clean patterns, and get hands-on experience with authentication and role management.
+- ASP.NET Core MVC
+- Entity Framework Core
+- SQL Server
+- Identity
+- AutoMapper
+- Bootstrap 5
+- Google OAuth / Facebook Login
+- OBS Studio (for demo recording)
+- HandBrake (for video conversion)
