@@ -1,0 +1,67 @@
+﻿@model IEnumerable<InstructorViewModel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Instructors</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <h1>All Instructors</h1>
+    <div class="row justify-content-center align-items-center mt-5">
+        <form method="post" asp-controller="Instructor" asp-action="Index" class="row col-8 offset-2">
+            <div class="col-8">
+                <input type="text" class="form-control" name="Search" placeholder="Search By Name" />
+            </div>
+            <div class="col-4">
+                <input type="submit" value="Search" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+    @if (Model.Count() > 0)
+    {
+        <table class="mt-4 table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(S => S.FirstName)</th>
+                    <th>@Html.DisplayNameFor(S => S.LastName)</th>
+                    <th>@Html.DisplayNameFor(S => S.Email)</th>
+                    <th>@Html.DisplayNameFor(S => S.Gender)</th>
+                    <th>Details</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var Instructor in Model)
+                {
+                    <tr>
+                        <td>@Instructor.FirstName</td>
+                        <td>@Instructor.LastName</td>
+                        <td>@Instructor.Email</td>
+                        <td>@Instructor.Gender</td>
+                        <partial name="_IconsPartial" model="@Instructor.Id">
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="mt-4 alert alert-warning">
+            <h4>There Is No Instructors :(</h4>
+        </div>
+    }
+    <a asp-controller="Admin" asp-action="Index" class="btn btn-dark">Back To Admin Dashboard</a>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

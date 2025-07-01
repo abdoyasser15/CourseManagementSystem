@@ -1,0 +1,29 @@
+﻿@model StudentViewModel
+@{
+    Layout = null;
+}
+<div class="w-50 m-auto">
+    <div>
+        <label asp-for="FirstName" class="form-label"></label>
+        <input asp-for="FirstName" class="form-control" readonly/>
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="LastName" class="form-label"></label>
+        <input asp-for="LastName" class="form-control" readonly/>
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" type="text" readonly/>
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Gender" class="form-label"></label>
+        <input asp-for="Gender" class="form-control" type="text" step="0.01" readonly/>
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+</div>

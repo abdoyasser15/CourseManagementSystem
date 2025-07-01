@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Enrollment>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>StudentInCourses</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <h1>All Student In Courses</h1>
+    <br />
+    <br />
+    <div class="row justify-content-center align-items-center mt-5">
+        <form method="post" asp-controller="Enrollment" asp-action="Index" class="row col-8 offset-2">
+            <div class="col-8">
+                <input type="text" class="form-control" name="Search" placeholder="Search By Title" />
+            </div>
+            <div class="col-4">
+                <input type="submit" value="Search" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+    @if (Model.Count() > 0)
+    {
+        <table class="mt-4 table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(C => C.Course.Title)</th>
+                    <th>@Html.DisplayNameFor(S => S.Student.FirstName)</th>
+                    <th>@Html.DisplayNameFor(S => S.Student.LastName)</th>
+                    <th>@Html.DisplayNameFor(S => S.Student.Gender)</th>
+                    <th>@Html.DisplayNameFor(S => S.Student.Email)</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var enrollment in Model)
+                {
+                    <tr>
+                        <td>@enrollment.Course.Title</td>
+                        <td>@enrollment.Student.FirstName</td>
+                        <td>@enrollment.Student.LastName</td>
+                        <td>@enrollment.Student.Gender</td>
+                        <td>@enrollment.Student.Email</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="mt-4 alert alert-warning">
+            <h4>There Is No Student In Courses :(</h4>
+        </div>
+    }
+    <a asp-controller="Admin" asp-action="Index" class="btn btn-dark">Back To Admin Dashboard</a>
+</body>
+</html>

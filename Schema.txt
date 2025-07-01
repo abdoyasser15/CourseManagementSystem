@@ -1,0 +1,62 @@
+┌──────────────────────┐
+│        Users         │
+│──────────────────────│
+│ Id (PK)              │
+│ UserName             │
+│ Email                │
+│ PasswordHash         │
+│ Role (Admin/Student/Instructor) ← المهم للـ Admin
+└─────────┬────────────┘
+          │
+          │
+          │
+          ▼
+┌──────────────────────┐
+│      Courses         │
+│──────────────────────│
+│ Id (PK)              │
+│ Title                │
+│ Description          │
+│ Price                │
+│ StartDate            │
+│ InstructorId (FK) ───┘ ← يربط المدرس بالكورس
+│ CategoryId (FK)
+└─────────┬────────────┐
+          │
+          │
+          ▼
+┌──────────────────────┐
+│     Enrollments      │ ← يديرها Admin أو الطالب
+│──────────────────────│
+│ Id (PK)              │
+│ StudentId (FK)       │
+│ CourseId (FK)        │
+│ EnrollDate           │
+└──────────────────────┘
+
+┌──────────────────────┐
+│     Categories        │
+│──────────────────────│
+│ Id (PK)              │
+│ Name                 │
+└──────────────────────┘
+
+┌──────────────────────┐
+│      Ratings          │
+│──────────────────────│
+│ Id (PK)              │
+│ CourseId (FK)        │
+│ StudentId (FK)       │
+│ Stars                │
+│ Comment              │
+│ Date                 │
+└──────────────────────┘
+
+┌──────────────────────┐
+│     AuditLogs         │ ← خاص بالـ Admin
+│──────────────────────│
+│ Id (PK)              │
+│ UserId (FK)          │
+│ Action               │
+│ Timestamp            │
+└──────────────────────┘

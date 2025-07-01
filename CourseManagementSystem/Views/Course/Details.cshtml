@@ -1,0 +1,10 @@
+﻿@model CourseViewModel
+@{
+    Layout = null;
+}
+<h1>Details</h1>
+<div>
+    <partial name="PartialViews/DetailsDeleteCoursePartialView">
+    <a asp-controller="Course" asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-secondary">Edit</a>
+    <a asp-controller="Course" asp-action="Index" class="btn btn-light">Back To List</a>
+</div>

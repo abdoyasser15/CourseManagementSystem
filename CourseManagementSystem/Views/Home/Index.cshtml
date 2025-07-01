@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "الصفحة الرئيسية";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+}
+<div class="jumbotron bg-primary text-white p-5 rounded shadow-sm">
+    <h1 class="display-4">Welcome to the Educational Courses Management Platform!</h1>
+    <p class="lead">Organize, learn, and teach with ease and professionalism.</p>
+    @if (User.IsInRole("Student"))
+    {
+        <a class="btn btn-light btn-lg" href="/Student/Courses">Browse Courses</a>
+    }
+</div>
+
+<div class="mt-4">
+
+    @if (User.IsInRole("Admin"))
+    {
+        <div class="alert alert-warning">Welcome Admin!</div>
+        <a class="btn btn-outline-success me-2" href="/Admin/Index">Admin DashBoard</a>
+    }
+    else if (User.IsInRole("Instructor"))
+    {
+        <div class="alert alert-warning">Welcome Instructor!</div>
+        <a class="btn btn-outline-primary" href="/Course/Create">Create Course</a>
+    }
+    else if (User.IsInRole("Student"))
+    {
+        <div class="alert alert-success">Welcome Student</div>
+        <a class="btn btn-outline-primary me-2" href="/Student/MyCourses">My Courses</a>
+    }
+    else
+    {
+        <div class="alert alert-secondary">Log in to benefit from the platform.</div>
+    }
+</div>
+
+<div class="row mt-5 text-center">
+    <div class="col-md-4">
+        <i class="bi bi-book fs-1 text-primary"></i>
+        <img width="100px" src="~/lib/images.png" />
+        <h4 class="mt-2">Comprehensive Courses</h4>
+        <p>Learn through a variety of courses in all fields.</p>
+    </div>
+    <div class="col-md-4">
+        <i class="bi bi-person-video3 fs-1 text-primary"></i>
+        <img width="100px" src="~/lib/view-3d-male-teacher_1295705-20660.png" />
+        <h4 class="mt-2">Professional Instructor</h4>
+        <p>All our instructors are certified and highly experienced.</p>
+    </div>
+    <div class="col-md-4">
+        <i class="bi bi-award fs-1 text-primary"></i>
+        <img width="100px" src="~/lib/9180C24095E2B1A645FB4947E178B1C03376AD56.png" />
+        <h4 class="mt-2">Accredited Certificates</h4>
+        <p>Receive a certificate upon completing each course.</p>
+    </div>
+</div>

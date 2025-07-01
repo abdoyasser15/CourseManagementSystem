@@ -1,0 +1,9 @@
+﻿@model string
+<td>
+    <form asp-action="Register" method="post">
+        <input type="hidden" name="courseId" value="@Model" />
+        <button type="submit" class="btn btn-success">
+            <i class="fas fa-eye"></i> Register
+        </button>
+    </form>
+</td>
