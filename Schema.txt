@@ -5,7 +5,7 @@
 │ UserName             │
 │ Email                │
 │ PasswordHash         │
-│ Role (Admin/Student/Instructor) ← المهم للـ Admin
+│ Role (Admin/Student/Instructor)
 └─────────┬────────────┘
           │
           │
