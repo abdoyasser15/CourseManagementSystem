@@ -12,7 +12,6 @@ A web-based system built using ASP.NET Core MVC for managing courses, instructor
 - 🌐 External login via Google & Facebook
 - 📊 View registered students per course
 - 🔎 Course search functionality
-- 🎥 Recorded demo (OBS Studio + HandBrake)
 
 ---
 
